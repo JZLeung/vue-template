@@ -14,24 +14,22 @@ import store from  './store/store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.use(Vuex){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
 
-
-
 Vue.config.productionTip = false{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  {{#router}}
-  router,
-  {{/router}}
-  {{#vuex}}
-  store,
-  {{/vuex}}
-  {{#if_eq build "runtime"}}
-  render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  {{/if_eq}}
-  {{#if_eq build "standalone"}}
-  template: '<App/>',
-  components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  {{/if_eq}}
+    el: '#app',
+    {{#router}}
+    router,
+    {{/router}}
+    {{#vuex}}
+    store,
+    {{/vuex}}
+    {{#if_eq build "runtime"}}
+    render: h => h(App){{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    {{/if_eq}}
+    {{#if_eq build "standalone"}}
+    template: '<App/>',
+    components: { App }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    {{/if_eq}}
 }){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
